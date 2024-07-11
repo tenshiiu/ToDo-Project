@@ -4,17 +4,7 @@ import { Header } from "./components/Header.jsx"
 import { useState } from 'react'
 import { NewTask } from "./components/NewTask.jsx"
 
-function App() {
-
-   const TodoList = () => {
-    const [tasks, setTasks] = useState([]);
-    const [newTask, setNewTask] = useState('');
-
-   const addTask = () => {
-    if (newTask.trim() !== '') {
-        setTasks([...tasks, newTask]);
-        setNewTask('');
-      }
+function App() { 
 
   return (
     <>
@@ -28,11 +18,10 @@ function App() {
          <input 
          className={styles.inputTask} 
          type="text"  
-         id="new-task" 
-         onChange={(e) => setNewTask(e.target.value)} 
+         id="new-task"
          placeholder="Adicionar uma nova tarefa"/>
 
-          <button className={styles.button} onClick={addTask}>Criar</button>
+          <button className={styles.button}>Criar</button>
          </div>
 
         <div className={styles.info}>
@@ -41,19 +30,14 @@ function App() {
         </div>
           <hr />
           <div>
-          {tasks.map((task, index) => (
-          <NewTask 
-          key={index}
-          content={task}
+          <NewTask
+          content="Passear com os cachorros"
           />
-        ))}
           </div>
       </div>
     </>
   )
   }
- }
-}
 
 export default App
 
