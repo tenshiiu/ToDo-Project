@@ -1,0 +1,17 @@
+.EmptyTask {
+    padding-top: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.DescriptionEmpty {
+    padding-top: 4px;
+
+    color: #808080;
+    font-family: "Inter", sans-serif;
+    font-size: small;
+
+    text-align: center;
+}
