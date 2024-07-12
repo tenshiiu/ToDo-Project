@@ -6,8 +6,12 @@ import { NewTask } from "./components/NewTask.jsx"
 
 function App() { 
 
-    const [TaskCreate, setTaskCreate] = useState(0);
+   // const [TaskCreate, setTaskCreate] = useState(0);
     const [TaskComplete, setTaskComplete] = useState(0);
+
+    function displayText() {
+      const infoText = document.querySelector('#campo');
+      const showText = (infoText.value);
 
 
   return (
@@ -22,10 +26,11 @@ function App() {
          <input 
          className={styles.inputTask} 
          type="text"  
-         id="new-task"
+         id="campo"
+         required={true}
          placeholder="Adicionar uma nova tarefa"/>
 
-          <button className={styles.button} onClick={() => setTaskCreate(TaskCreate + 1)}>Criar</button>
+          <button className={styles.button}  onClick={displayText} >Criar</button>
          </div>
 
         <div className={styles.info}>
@@ -35,13 +40,14 @@ function App() {
           <hr />
           <div>
           <NewTask
-          content="Passear com os cachorros"
+          content={showText}
           check={() => setTaskComplete(TaskComplete + 1)}
           />
           </div>
       </div>
     </>
     )
+  } 
 }
 
 
